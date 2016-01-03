@@ -1,4 +1,4 @@
-box: wercker/box-php
+box: php
 build:
   steps:
     - script:
