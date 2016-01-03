@@ -58,4 +58,11 @@ class Card {
   public function setBack($back) {
     $this->back = $back;
   }
+
+  /**
+   * @return int
+   */
+  public function getId() {
+    return $this->id;
+  }
 }
