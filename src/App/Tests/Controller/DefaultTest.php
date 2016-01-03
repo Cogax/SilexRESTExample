@@ -13,6 +13,7 @@ class DefaultTest extends AppTestCase {
 
     $this->assertTrue($response->isOk());
     $this->assertEquals(json_encode('Vocab REST API Endpoint'), $response->getContent());
+    $this->assertEquals('application/json', $response->headers->get('Content-Type'));
   }
 
 }
