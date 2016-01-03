@@ -3,10 +3,10 @@ build:
   steps:
     - script:
       name: install composer
-      code: curl -sS https://getcomposer.org/installer | php -- --install-dir=bin --filename=composer
+      code: curl -sS https://getcomposer.org/installer | php
     - script:
       name: install dependencies
-      code: php bin/composer install
+      code: php composer.phar install
     - script:
       name: run unit tests
       code: phpunit
