@@ -7,5 +7,6 @@ $app = new App\Silex\Application(array(
 ));
 
 include __DIR__.'/../app/routes.php';
+include __DIR__.'/../app/middlewares.php';
 
 return $app;

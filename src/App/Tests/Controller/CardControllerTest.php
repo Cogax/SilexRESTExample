@@ -12,7 +12,7 @@ class CardControllerTest extends AppTestCase {
     $response = $client->getResponse();
 
     $this->assertTrue($response->isOk());
-    $this->assertEquals('All cards', $response->getContent());
+    $this->assertEquals(json_encode('All cards'), $response->getContent());
   }
 
 }
