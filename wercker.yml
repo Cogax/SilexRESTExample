@@ -2,8 +2,11 @@ box: php
 build:
   steps:
     - script:
+      name: install composer
+      code: curl -sS https://getcomposer.org/installer | php -- --install-dir=bin --filename=composer
+    - script:
       name: install dependencies
-      code: composer install
+      code: php bin/composer install
     - script:
       name: run unit tests
       code: phpunit
