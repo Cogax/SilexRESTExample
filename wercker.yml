@@ -1,4 +1,4 @@
-box: composer/composer:latest
+box: boedy/wercker-php
 build:
   steps:
     - script:
