@@ -1,4 +1,4 @@
-box: php
+box: phpmentors/symfony-app
 build:
   steps:
     - script:
