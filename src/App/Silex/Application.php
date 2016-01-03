@@ -3,11 +3,14 @@
 namespace App\Silex;
 
 use Silex\Provider\DoctrineServiceProvider;
+use Silex\Provider\ServiceControllerServiceProvider;
 
 class Application extends \Silex\Application {
 
   public function __construct(array $values) {
     parent::__construct($values);
+
+    $this->register(new ServiceControllerServiceProvider());
 
     $this->register(new DoctrineServiceProvider(), array(
       'db.options' => array(

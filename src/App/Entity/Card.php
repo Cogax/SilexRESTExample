@@ -21,13 +21,13 @@ class Card {
 
   /**
    * @var string
-   * @Column(type="text")
+   * @Column(type="text", nullable=false)
    */
   protected $front;
 
   /**
    * @var string
-   * @Column(type="text")
+   * @Column(type="text", nullable=false)
    */
   protected $back;
 

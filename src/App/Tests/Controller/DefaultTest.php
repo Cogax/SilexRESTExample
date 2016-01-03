@@ -8,7 +8,7 @@ class DefaultTest extends AppTestCase {
 
   public function testHomePage() {
     $client = $this->createClient();
-    $client->request('GET', '/');
+    $client->request('GET', $this->app['api.path'].'/');
     $response = $client->getResponse();
 
     $this->assertTrue($response->isOk());
