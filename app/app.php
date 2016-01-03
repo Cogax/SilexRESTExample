@@ -6,6 +6,6 @@ $app = new App\Silex\Application(array(
   'debug' => true,
 ));
 
-include __DIR__.'/../app/routing.php';
+include __DIR__.'/../app/routes.php';
 
 return $app;
