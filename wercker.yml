@@ -1,12 +1,9 @@
-box: phpmentors/symfony-app
+box: composer/composer
 build:
   steps:
     - script:
-      name: install composer
-      code: curl -sS https://getcomposer.org/installer | php
-    - script:
       name: install dependencies
-      code: php composer.phar install
+      code: composer install
     - script:
       name: run unit tests
       code: phpunit
