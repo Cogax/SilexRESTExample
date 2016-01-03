@@ -6,4 +6,4 @@ build:
       code: composer install
     - script:
       name: run unit tests
-      code: phpunit
+      code: ./vendor/bin/phpunit
