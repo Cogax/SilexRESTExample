@@ -7,5 +7,10 @@
   "require": {
     "silex/silex": "~2.0@dev",
     "dflydev/doctrine-orm-service-provider": "~2.0@dev"
+  },
+  "require-dev": {
+    "symfony/browser-kit": "^3.0",
+    "symfony/css-selector": "^3.0",
+    "phpunit/phpunit": "^4.8"
   }
 }
