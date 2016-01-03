@@ -1,4 +1,4 @@
-box: composer/composer
+box: composer/composer:latest
 build:
   steps:
     - script:
