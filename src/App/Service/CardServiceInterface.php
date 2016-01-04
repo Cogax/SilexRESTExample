@@ -2,6 +2,9 @@
 
 namespace App\Service;
 
+/**
+ * Card Service definition independent from persistence framework.
+ */
 interface CardServiceInterface {
 
   /**

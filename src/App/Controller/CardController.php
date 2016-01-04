@@ -6,6 +6,8 @@ use App\Service\CardServiceInterface;
 use Papper\Papper;
 use Silex\Application;
 use Symfony\Component\HttpFoundation\JsonResponse;
+use Symfony\Component\Validator\Constraints\Valid;
+use Symfony\Component\Validator\Validator\ValidatorInterface;
 
 
 class CardController {
@@ -21,7 +23,9 @@ class CardController {
 
   public function getAll() {
     $cards = $this->cardService->getAll();
-    $response = new JsonResponse($cards);
+    $cardDTOs = Papper::map($cards, 'App\Entity\Card')->toType('App\DTO\CardDTO');
+    $response = new JsonResponse($cardDTOs);
+
     return $response;
   }
 
