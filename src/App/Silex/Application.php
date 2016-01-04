@@ -2,8 +2,14 @@
 
 namespace App\Silex;
 
+use Doctrine\Common\Annotations\AnnotationReader;
+use Doctrine\Common\Annotations\AnnotationRegistry;
 use Silex\Provider\DoctrineServiceProvider;
 use Silex\Provider\ServiceControllerServiceProvider;
+use Silex\Provider\ValidatorServiceProvider;
+use Symfony\Component\Validator\Mapping\Factory\LazyLoadingMetadataFactory;
+use Symfony\Component\Validator\Mapping\Loader\AnnotationLoader;
+use Symfony\Component\Validator\Validator\ValidatorInterface;
 
 class Application extends \Silex\Application {
 
@@ -11,6 +17,16 @@ class Application extends \Silex\Application {
     parent::__construct($values);
 
     $this->register(new ServiceControllerServiceProvider());
+
+    $this->register(new ValidatorServiceProvider());
+    $this['validator.mapping.class_metadata_factory'] = function ($this) {
+      foreach (spl_autoload_functions() as $fn) {
+        AnnotationRegistry::registerLoader($fn);
+      }
+      $reader = new AnnotationReader;
+      $loader = new AnnotationLoader($reader);
+      return new LazyLoadingMetadataFactory($loader);
+    };
 
     $this->register(new DoctrineServiceProvider(), array(
       'db.options' => array(

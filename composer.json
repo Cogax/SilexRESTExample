@@ -6,7 +6,11 @@
   },
   "require": {
     "silex/silex": "~2.0@dev",
-    "dflydev/doctrine-orm-service-provider": "~2.0@dev"
+    "dflydev/doctrine-orm-service-provider": "~2.0@dev",
+    "jms/serializer": "^1.1",
+    "symfony/validator": "^3.0",
+    "idr0id/papper": "~1.0",
+    "doctrine/annotations": "^1.2"
   },
   "require-dev": {
     "symfony/browser-kit": "^3.0",

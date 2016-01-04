@@ -6,6 +6,8 @@ use Doctrine\ORM\Mapping\Column;
 use Doctrine\ORM\Mapping\Entity;
 use Doctrine\ORM\Mapping\GeneratedValue;
 use Doctrine\ORM\Mapping\Id;
+use Symfony\Component\Validator\Constraints\NotBlank;
+use Symfony\Component\Validator\Constraints\NotNull;
 
 /**
  * @Entity()
@@ -22,12 +24,14 @@ class Card {
   /**
    * @var string
    * @Column(type="text", nullable=false)
+   * @NotBlank()
    */
   protected $front;
 
   /**
    * @var string
    * @Column(type="text", nullable=false)
+   * @NotBlank()
    */
   protected $back;
 

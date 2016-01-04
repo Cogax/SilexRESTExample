@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Service\CardServiceInterface;
+use Papper\Papper;
 use Silex\Application;
 use Symfony\Component\HttpFoundation\JsonResponse;
 
@@ -19,7 +20,9 @@ class CardController {
   }
 
   public function getAll() {
-    return new JsonResponse($this->cardService->getAll());
+    $cards = $this->cardService->getAll();
+    $response = new JsonResponse($cards);
+    return $response;
   }
 
 }
