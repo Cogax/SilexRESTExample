@@ -1,4 +1,4 @@
-box: boedy/wercker-php
+box: cogax/wercker-php
 build:
   steps:
     - script:
